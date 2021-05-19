@@ -1,27 +1,25 @@
 package com.example.repository;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="product")
-@Getter @Setter @NoArgsConstructor
+@Table
+@Getter @Setter
 public class Product {
 	
-	@javax.persistence.Id
+	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String name;
 	private String color;
 	private String category;
-	
-	public Product() {}
+
+
+	public Product(){}
 
 	public Product(Long id, String name, String color, String category) {
 		super();
